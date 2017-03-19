@@ -1,8 +1,8 @@
 export const STORE = {
 	_data: {
+		currentView: ''
 		shoutOutList: [],
-		shownRatingType: 'PG',
-		currentNavRoute: ''
+		shownRatingType: ''
 	},
 	
 	getStoreData: function(){
@@ -10,6 +10,7 @@ export const STORE = {
 	},
 	
 	setStore: function(storeProp, payload){
+		console.log(storeProp, this._data[storeProp])
 		if (typeof this._data[storeProp] === 'undefined' ) {
 			throw new Error('Cannot set property that does not exist on STORE._data') 
 		}
@@ -22,7 +23,7 @@ export const STORE = {
 
 	onStoreChange: function(cbFunc){
 		
-		if(typeof this.cbFunc !== 'function'){
+		if(typeof cbFunc !== 'function'){
 			throw new Error('argument to store must be a FUNCTION') 
 		}
 		
@@ -32,6 +33,5 @@ export const STORE = {
 
 		this._callMeLaterPls = cbFunc
 	}
-
 	
 }

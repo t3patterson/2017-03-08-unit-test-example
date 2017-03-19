@@ -31,7 +31,6 @@ describe('const STORE', function(){
 		it('should have shoutOutList (array), ratingType (string), and currentNavRoute (string)', function(){
 			expect(STORE._data.shoutOutList).to.be.instanceof(Array)
 			expect(STORE._data.shownRatingType).to.be.a('string')
-			expect(STORE._data.shownRatingType).to.be.a('string')
 
 		})
 	})
